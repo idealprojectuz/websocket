@@ -16,7 +16,7 @@ io.on("connection", (socket) =>{
     if(token && token === "token"){
         console.log("userni qaytarvordim ortiga");
         
-        socket.emit("token_error");
+        socket.to(socket.id).emit("token_error");
     }
     
     socket.on("new_data", (data, callback: unknown) =>{
